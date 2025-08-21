@@ -27,7 +27,6 @@ class InsuranceController extends AbstractController
     public function calculate(Request $request): JsonResponse
     {
         try {
-            // Log the raw request
             $requestContent = $request->getContent();
             
             if (empty($requestContent)) {
@@ -46,10 +45,7 @@ class InsuranceController extends AbstractController
                     'request' => $requestContent,
                 ], 400);
             }
-            
-            // Log the parsed data
-            
-            // Validate required fields
+
             $requiredFields = ['insuranceAmount', 'startDate', 'endDate', 'currency'];
             $missingFields = [];
             foreach ($requiredFields as $field) {

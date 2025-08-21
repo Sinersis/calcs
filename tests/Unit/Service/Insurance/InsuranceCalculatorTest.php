@@ -72,8 +72,7 @@ class InsuranceCalculatorTest extends TestCase
         );
         
         $response = $this->calculator->calculate($request);
-        
-        // Verify the calculation for a single day
+
         $this->assertEquals(0.9, $response->totalInCurrency); // 0.9 * 1 day = 0.9 USD
         $this->assertEquals(67.95, $response->totalInRubles); // 0.9 * 75.5 = 67.95 RUB
         $this->assertEquals(1, $response->daysCount);
@@ -104,7 +103,7 @@ class InsuranceCalculatorTest extends TestCase
         
         $request = new CalculateInsuranceRequest(
             insuranceAmount: 30000,
-            startDate: '2025-01-10', // Start date after end date
+            startDate: '2025-01-10',
             endDate: '2025-01-01',
             currency: 'EUR'
         );
@@ -114,7 +113,6 @@ class InsuranceCalculatorTest extends TestCase
 
     public function testGetDailyRateWithValidAmount(): void
     {
-        // Use reflection to test the private method
         $reflection = new \ReflectionClass($this->calculator);
         $method = $reflection->getMethod('getDailyRate');
         $method->setAccessible(true);
