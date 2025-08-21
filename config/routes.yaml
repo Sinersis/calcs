@@ -1,3 +1,4 @@
+# Load controllers from the src/Controller/ directory
 controllers:
     resource:
         path: ../src/Controller/

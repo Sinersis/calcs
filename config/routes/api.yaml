@@ -1,0 +1,6 @@
+api_insurance_calculate:
+    path: /api/insurance/calculate
+    controller: App\Controller\InsuranceController::calculate
+    methods: [POST]
+    defaults:
+        _format: json
