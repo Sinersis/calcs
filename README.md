@@ -8,19 +8,6 @@ This is a Symfony-based API for calculating travel insurance costs for trips abr
 - Composer
 - Symfony 7.3
 
-## Installation
-
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   composer install
-   ```
-3. Configure your environment variables in `.env` if needed
-4. Start the development server:
-   ```bash
-   symfony server:start
-   ```
-
 ## API Endpoint
 
 ### Calculate Insurance Cost
